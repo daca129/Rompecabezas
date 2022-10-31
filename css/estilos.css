@@ -1,3 +1,33 @@
-#entorno{
+.entorno{
+    margin: 0 auto;
+    border: solid black 1px;
+    background-image: url(../img/mercedez.jpg);
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 650px;
+    width: 900px;
+    opacity: .5;
+    
+}
 
+.movil{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 35px;
+    width: 300px;
+    height: 216px;
+}
+
+.grid{
+
+    border: solid black 1px;
+}
+
+.spawn{
+    position: absolute;
+    width: 370px;
+    height: 320px;
+    background-color: red;
+    margin: 0 auto;
 }
