@@ -1,10 +1,9 @@
 let pie =document.querySelectorAll('.movil');
-let grid = document.getElementById('entorno');
-let overlapThereshold = '100%';
-
-window.onload=function(){
-    loader();    
-}
+let grid = document.getElementsByClassName('grid');
+let overlapThereshold = '60%';
+let posX=[467,767,1067,467,767,1067,467,767,1067];
+let posY=[-670,-670,-670,-454,-454,-454,-238,-238,-238];
+let cont;
 
 Draggable.create(pie,{
     bounds: window,
@@ -12,22 +11,24 @@ Draggable.create(pie,{
 
     },
     onDragEnd: function(e){
-        if(this.hitTest(grid,overlapThereshold)){
-            console.log(this.target.style.backgroundColor);
-            let color = this.target.style.backgroundColor;
-            if(color=='red'){
+        for(let i=0;i<9;i++){
+            if(this.hitTest(grid[i],overlapThereshold)){
                 gsap.to(this.target,{
-                    x:0,
-                    y:0,
+                    x:posX[i],
+                    y:posY[i],
                     delay: 0.2,
                     duration: 0.2,
                     ease: 'power2.inOut'
                 });
+                console.log(pie[i].getAttribute('id'));
+                console.log(i);
+                if(pie[i].getAttribute('id')==i+1){
+                    cont=cont+1;
+                }
             }
-            console.log('Adentro');
-        }
-        else{
-            console.log('Afuera');
+            else{
+
+            }
         }
     },
 });
