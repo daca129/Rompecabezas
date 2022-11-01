@@ -19,6 +19,14 @@
     height: 216px;
 }
 
+.notMovil{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 35px;
+    width: 300px;
+    height: 216px;
+}
+
 .grid{
     border: solid black 1px;
     

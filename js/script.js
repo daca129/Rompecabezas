@@ -7,6 +7,7 @@ let cont=0;
 let i;
 let piez;
 
+
 Draggable.create(pie,{
     bounds: window,
     onDrag: function(e){
@@ -29,12 +30,14 @@ Draggable.create(pie,{
             }
         }
         checar(i,piez);
+        pie =document.querySelectorAll('.movil');
     },
 });
 
 function checar(qued,pieza){
     if(pie[qued].getAttribute('id')==pieza.getAttribute('id')){
         cont=cont+1;
+        pieza.setAttribute('class', 'notMovil');
         if(cont==9){
             setTimeout(()=>{
                 window.alert('Ganaste!');
