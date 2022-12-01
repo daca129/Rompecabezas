@@ -34,15 +34,17 @@ Draggable.create(pie,{
     },
 });
 
-function checar(qued,pieza){
-    if(pie[qued].getAttribute('id')==pieza.getAttribute('id')){
-        cont=cont+1;
-        pieza.setAttribute('class', 'notMovil');
-        if(cont==9){
-            setTimeout(()=>{
-                window.alert('Ganaste!');
-            },500);
-            
+function checar(qued, pieza){
+    if(qued != 9){
+        if(pie[qued].getAttribute('id')==pieza.getAttribute('id')){
+            cont=cont+1;
+            pieza.setAttribute('class', 'notMovil');
+            if(cont==9){
+                setTimeout(()=>{
+                    window.alert('Ganaste!');
+                },500);
+                
+            }
         }
     }
 }
